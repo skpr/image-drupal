@@ -12,3 +12,6 @@ ADD --chown=skpr:skpr services.yml /data/app/sites/default/services.yml
 COPY --from=docker.io/composer:2 --chown=skpr:skpr /usr/bin/composer /usr/local/bin/
 RUN composer require drush/drush
 COPY drush /etc/drush
+
+# Install Umami for testing.
+RUN PHP_MEMORY_LIMIT=-1 vendor/bin/drush si demo_umami --db-url=sqlite://sites/default/files/.ht.sqlite
