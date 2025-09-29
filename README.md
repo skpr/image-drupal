@@ -2,6 +2,20 @@
 
 Baked Drupal images for infastructure development workflows.
 
+## Usage
+
+```yaml
+services:
+
+  nginx:
+    image: ghcr.io/skpr/image-drupal:nginx-main
+    ports:
+      - "8080:8080"
+
+  php-fpm:
+    image: ghcr.io/skpr/image-drupal:php-fpm-main
+```
+
 ## Streams
 
 This image suite provides 2 streams for images:
